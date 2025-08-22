@@ -1,8 +1,24 @@
+import{useState,useEffet}from "react"
 import Header from "./components/Header"
+import "./css/global.css"
+import "./css/estilo.css"
 
 function App() {
- 
+ //HOOK-useStae - manipula o estado da variavel 
 
+ const[peso,setPESO]=useState(0);
+ const[alura,setAltura]=useState(0);
+ const[resultado,setResultado]=useState(0); 
+ const[mostrarresultado, setMostrarResultado]=useState(false)
+
+ //funcao calcular IMC
+const calcularImc=()=>{
+  const imc = peso /(altura*altura)
+  return setResultado(imc.toFixed(2))
+}
+useEffect(()=>{
+  resultado . 0 ? setMostrarResultado(true) :setMostrarResultado(false)
+}, [resultado])
   return (
     // fragment
     <div className="container">
